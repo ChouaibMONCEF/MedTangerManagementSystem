@@ -1,0 +1,42 @@
+{
+  "name": "medtangerbackoffice",
+  "version": "1.0.0",
+  "description": "Boilerplate for future MERNStack project.",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Chouaib Moncef",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ChouaibMONCEF/WheelOfFortune.git"
+  },
+  "homepage": "",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "css-clean": "^2.2.5",
+    "date-fns": "^2.28.0",
+    "express": "^4.17.2",
+    "express-mongo-sanitize": "^2.1.0",
+    "express-rate-limit": "^6.1.0",
+    "express-session": "^1.17.2",
+    "helmet": "^5.0.1",
+    "hpp": "^0.2.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.3.0",
+    "mongoose": "^6.1.5",
+    "uuid": "^8.3.2",
+    "validator": "^13.7.0",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.15"
+  }
+}
