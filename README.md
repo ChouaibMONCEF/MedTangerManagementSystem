@@ -2,6 +2,8 @@
 An API for Med Tanger port that manage everything in the Port. Authentication with JWT and there is many endpoint will be discussed in Usage
 
 ## UML  
+![diagram de classe](https://user-images.githubusercontent.com/77148000/154664069-02a8d228-23cb-4c2b-a4fa-2757eb8320c2.png)
+
 
 ## Installation
 
