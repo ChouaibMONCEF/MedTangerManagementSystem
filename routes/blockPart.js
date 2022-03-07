@@ -7,19 +7,19 @@ const authController = require("../controllers/authController");
 //for logged in only
 router.use(authController.protect);
 
-router.get("/getAll", blockPartController.getAllBlockParts(req, res, next));
-router.get("/createOne", blockPartController.createBlockPart(req, res, next));
+
+router.post("/createOne", blockPartController.createBlockPart);
 
 router
   .route("/:id")
-  .get(blockPartController.getBlockPart(req, res, next))
-  .patch(blockPartController.updateBlockPart(req, res, next))
-  .delete(blockPartController.deleteBlockPart(req, res, next));
-
+  .get(blockPartController.getBlockPart)
+  .patch(blockPartController.updateBlockPart)
+  .delete(blockPartController.deleteBlockPart);
 
 //Only admins have access to this
 
 router.use(authController.restrictTo("admin"));
+router.get("/getAll", blockPartController.getAllBlockParts);
 
 
 module.exports = router;

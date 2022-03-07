@@ -40,13 +40,13 @@ const userSchema = new mongoose.Schema({
   },
   truck: [
     {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "truck",
     },
   ],
   container: [
     {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "container",
     },
   ],

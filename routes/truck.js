@@ -7,19 +7,19 @@ const authController = require("../controllers/authController");
 //for logged in only
 router.use(authController.protect);
 
-router.get("/getAll", truckController.getAllTrucks(req, res, next));
-router.get("/createOne", truckController.createTruck(req, res, next));
+
+router.post("/createOne", truckController.createTruck);
 
 router
-  .route("/:id")
-  .get(truckController.getTruck(req, res, next))
-  .patch(truckController.updateTruck(req, res, next))
-  .delete(truckController.deleteTruck(req, res, next));
-
+.route("/:id")
+.get(truckController.getTruck)
+.patch(truckController.updateTruck)
+.delete(truckController.deleteTruck);
 
 //Only admins have access to this
-
-router.use(authController.restrictTo("admin"));
-
+  
+  router.use(authController.restrictTo("admin"));
+  
+  router.get("/getAll", truckController.getAllTrucks);
 
 module.exports = router;

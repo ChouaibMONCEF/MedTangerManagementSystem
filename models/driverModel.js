@@ -15,7 +15,7 @@ const driverSchema = new mongoose.Schema({
   },
   trucks: [
     {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "truck",
     },
   ],

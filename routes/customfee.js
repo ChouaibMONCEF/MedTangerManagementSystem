@@ -7,17 +7,17 @@ const authController = require("../controllers/authController");
 //for logged in only
 router.use(authController.protect);
 
-router.get("/getAll", customFeeController.getAllCustomFees(req, res, next));
-router.get("/createOne", customFeeController.createCustomFee(req, res, next));
-
-router
-  .route("/:id")
-  .get(customFeeController.getCustomFee(req, res, next))
-  .patch(customFeeController.updateCustomFee(req, res, next))
-  .delete(customFeeController.deleteCustomFee(req, res, next));
 
 //Only admins have access to this
 
 router.use(authController.restrictTo("admin"));
+router.get("/getAll", customFeeController.getAllCustomFees);
+router.post("/createOne", customFeeController.createCustomFee);
+
+router
+  .route("/:id")
+  .get(customFeeController.getCustomFee)
+  .patch(customFeeController.updateCustomFee)
+  .delete(customFeeController.deleteCustomFee);
 
 module.exports = router;

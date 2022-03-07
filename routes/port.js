@@ -7,17 +7,17 @@ const authController = require("../controllers/authController");
 //for logged in only
 router.use(authController.protect);
 
-router.get("/getAll", portController.getAllPorts(req, res, next));
-router.get("/createOne", portController.createPort(req, res, next));
-
-router
-  .route("/:id")
-  .get(portController.getPort(req, res, next))
-  .patch(portController.updatePort(req, res, next))
-  .delete(portController.deletePort(req, res, next));
 
 //Only admins have access to this
 
 router.use(authController.restrictTo("admin"));
+router.get("/getAll", portController.getAllPorts);
+router.post("/createOne", portController.createPort);
+
+router
+  .route("/:id")
+  .get(portController.getPort)
+  .patch(portController.updatePort)
+  .delete(portController.deletePort);
 
 module.exports = router;

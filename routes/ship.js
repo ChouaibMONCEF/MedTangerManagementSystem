@@ -7,17 +7,17 @@ const authController = require("../controllers/authController");
 //for logged in only
 router.use(authController.protect);
 
-router.get("/getAll", shipController.getAllShips(req, res, next));
-router.get("/createOne", shipController.createShip(req, res, next));
 
 router
-  .route("/:id")
-  .get(shipController.getShip(req, res, next))
-  .patch(shipController.updateShip(req, res, next))
-  .delete(shipController.deleteShip(req, res, next));
+.route("/:id")
+.get(shipController.getShip)
+.patch(shipController.updateShip)
+.delete(shipController.deleteShip);
 
 //Only admins have access to this
 
 router.use(authController.restrictTo("admin"));
+router.post("/createOne", shipController.createShip);
+router.get("/getAll", shipController.getAllShips);
 
 module.exports = router;

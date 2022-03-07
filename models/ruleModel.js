@@ -26,7 +26,7 @@ const ruleSchema = new mongoose.Schema({
     required: [true, "Please fill this field!"],
   },
   port: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "port",
   },
 });

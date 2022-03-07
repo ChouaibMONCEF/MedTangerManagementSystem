@@ -7,10 +7,12 @@ const roleSchema = new mongoose.Schema({
     unique: true,
     lowercase: true,
   },
-  reference: [{
-    type: Schema.Types.ObjectId,
-    ref: 'user',
-  }]
+  reference: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "user",
+    },
+  ],
 });
 
 const Role = mongoose.model("role", roleSchema);

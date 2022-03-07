@@ -14,16 +14,16 @@ const blockSchema = new mongoose.Schema({
     required: [true, "Please fill this field!"],
   },
   container: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "container",
   },
   storageArea: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "storageArea",
   },
   blockparts: [
     {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "blockpart",
     },
   ],
