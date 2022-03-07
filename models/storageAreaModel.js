@@ -6,13 +6,15 @@ const storageAreaSchema = new mongoose.Schema({
     required: true,
   },
   communicationChannel: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "communication",
   },
-  blocks: [{
-    type: Schema.Types.ObjectId,
-    ref: "block",
-  }],
+  blocks: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "block",
+    },
+  ],
 });
 
 const StorageArea = mongoose.model("storageArea", storageAreaSchema);

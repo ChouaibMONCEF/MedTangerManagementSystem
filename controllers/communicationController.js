@@ -5,4 +5,4 @@ exports.createCommunication = base.createOne(Communication);
 exports.getAllCommunications = base.getAll(Communication);
 exports.getCommunication = base.getOne(Communication);
 exports.updateCommunication = base.updateOne(Communication);
-exports.deleteType = base.deleteOne(Type);
+exports.deleteCommunication = base.deleteOne(Communication);

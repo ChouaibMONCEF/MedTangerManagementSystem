@@ -6,18 +6,18 @@ const authController = require("../controllers/authController");
 
 //for logged in only
 router.use(authController.protect);
-
-router.get("/getAll", containerController.getAllContainers(req, res, next));
-router.get("/createOne", containerController.createContainer(req, res, next));
+router.post("/createOne", containerController.createContainer);
 
 router
-  .route("/:id")
-  .get(containerController.getContainer(req, res, next))
-  .patch(containerController.updateContainer(req, res, next))
-  .delete(containerController.deleteContainer(req, res, next));
+.route("/:id")
+.get(containerController.getContainer)
+.patch(containerController.updateContainer)
+.delete(containerController.deleteContainer);
 
 //Only admins have access to this
 
 router.use(authController.restrictTo("admin"));
+
+router.get("/getAll", containerController.getAllContainers);
 
 module.exports = router;

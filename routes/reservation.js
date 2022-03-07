@@ -7,17 +7,17 @@ const authController = require("../controllers/authController");
 //for logged in only
 router.use(authController.protect);
 
-router.get("/getAll", reservationController.getAllReservations(req, res, next));
-router.get("/createOne", reservationController.createReservation(req, res, next));
+router.post("/createOne", reservationController.createReservation);
 
 router
-  .route("/:id")
-  .get(reservationController.getReservation(req, res, next))
-  .patch(reservationController.updateReservation(req, res, next))
-  .delete(reservationController.deleteReservation(req, res, next));
+.route("/:id")
+.get(reservationController.getReservation)
+.patch(reservationController.updateReservation)
+.delete(reservationController.deleteReservation);
 
 //Only admins have access to this
 
 router.use(authController.restrictTo("admin"));
+router.get("/getAll", reservationController.getAllReservations);
 
 module.exports = router;

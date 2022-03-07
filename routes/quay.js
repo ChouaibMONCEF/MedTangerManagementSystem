@@ -7,17 +7,17 @@ const authController = require("../controllers/authController");
 //for logged in only
 router.use(authController.protect);
 
-router.get("/getAll", quayController.getAllQuays(req, res, next));
-router.get("/createOne", quayController.createQuay(req, res, next));
-
-router
-  .route("/:id")
-  .get(quayController.getQuay(req, res, next))
-  .patch(quayController.updateQuay(req, res, next))
-  .delete(quayController.deleteQuay(req, res, next));
 
 //Only admins have access to this
 
 router.use(authController.restrictTo("admin"));
+router.get("/getAll", quayController.getAllQuays);
+router.post("/createOne", quayController.createQuay);
+
+router
+  .route("/:id")
+  .get(quayController.getQuay)
+  .patch(quayController.updateQuay)
+  .delete(quayController.deleteQuay);
 
 module.exports = router;

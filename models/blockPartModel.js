@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 
 const blockPartSchema = new mongoose.Schema({
   categorie: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "categorie",
   },
   blockParts: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "blockPart",
   },
 });

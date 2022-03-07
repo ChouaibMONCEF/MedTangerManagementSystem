@@ -7,17 +7,17 @@ const authController = require("../controllers/authController");
 //for logged in only
 router.use(authController.protect);
 
-router.get("/getAll", driverController.getAllDrivers(req, res, next));
-router.get("/createOne", driverController.createDriver(req, res, next));
 
 router
-  .route("/:id")
-  .get(driverController.getDriver(req, res, next))
-  .patch(driverController.updateDriver(req, res, next))
-  .delete(driverController.deleteDriver(req, res, next));
+.route("/:id")
+.get(driverController.getDriver)
+.patch(driverController.updateDriver)
+.delete(driverController.deleteDriver);
 
 //Only admins have access to this
 
 router.use(authController.restrictTo("admin"));
+router.get("/getAll", driverController.getAllDrivers);
+router.post("/createOne", driverController.createDriver);
 
 module.exports = router;

@@ -7,7 +7,7 @@ const quaySchema = new mongoose.Schema({
   },
   type: [
     {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "type",
     },
   ],

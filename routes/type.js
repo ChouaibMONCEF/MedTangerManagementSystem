@@ -7,19 +7,19 @@ const authController = require("../controllers/authController");
 //for logged in only
 router.use(authController.protect);
 
-router.get("/getAll", typeController.getAllTypes(req, res, next));
-router.get("/createOne", typeController.createType(req, res, next));
-
-router
-  .route("/:id")
-  .get(typeController.getType(req, res, next))
-  .patch(typeController.updateType(req, res, next))
-  .delete(typeController.deleteType(req, res, next));
 
 
 //Only admins have access to this
 
 router.use(authController.restrictTo("admin"));
+router.get("/getAll", typeController.getAllTypes);
+router.post("/createOne", typeController.createType);
+
+router
+  .route("/:id")
+  .get(typeController.getType)
+  .patch(typeController.updateType)
+  .delete(typeController.deleteType);
 
 
 module.exports = router;

@@ -31,13 +31,13 @@ const containerSchema = new mongoose.Schema({
   },
   customFees: [
     {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "customFees",
     },
   ],
   categories: [
     {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "categorie",
     },
   ],

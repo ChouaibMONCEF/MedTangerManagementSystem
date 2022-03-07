@@ -12,13 +12,13 @@ const communicationSchema = new mongoose.Schema({
   },
   trucks: [
     {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "truck",
     },
   ],
   storageAreas: [
     {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "storageArea",
     },
   ],

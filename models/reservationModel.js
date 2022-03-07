@@ -14,18 +14,18 @@ const reservationSchema = new mongoose.Schema({
     required: [true, "Please fill this field!"],
   },
   user: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "user",
   },
   ship: [
     {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "ship",
     },
   ],
   quay: [
     {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "quay",
     },
   ],

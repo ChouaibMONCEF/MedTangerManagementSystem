@@ -20,13 +20,13 @@ const shipSchema = new mongoose.Schema({
   },
   container: [
     {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "container",
     },
   ],
   owner: [
     {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "shipOwner",
     },
   ],

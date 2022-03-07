@@ -10,7 +10,7 @@ const portSchema = new mongoose.Schema({
   },
   quay: [
     {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "quay",
     },
   ],

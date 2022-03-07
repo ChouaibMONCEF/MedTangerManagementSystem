@@ -7,17 +7,17 @@ const authController = require("../controllers/authController");
 //for logged in only
 router.use(authController.protect);
 
-router.get("/getAll", communicationController.getAllCommunications(req, res, next));
-router.get("/createOne", communicationController.createCommunication(req, res, next));
+router.post("/createOne", communicationController.createCommunication);
 
 router
-  .route("/:id")
-  .get(communicationController.getCommunication(req, res, next))
-  .patch(communicationController.updateCommunication(req, res, next))
-  .delete(communicationController.createCommunication(req, res, next));
+.route("/:id")
+.get(communicationController.getCommunication)
+.patch(communicationController.updateCommunication)
+.delete(communicationController.createCommunication);
 
 //Only admins have access to this
 
 router.use(authController.restrictTo("admin"));
+router.get("/getAll", communicationController.getAllCommunications);
 
 module.exports = router;
